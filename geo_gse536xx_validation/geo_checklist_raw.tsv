@@ -1,0 +1,13 @@
+acc	matrix	gpl	n_samples	title	survival_sniff	meth	rna
+GSE23400	GSE23400-GPL96_series_matrix.txt.gz	GPL96|GPL97	106	Global gene expression profiling and validation in esophageal squamous cell carcinoma (ESCC)	UNKNOWN	meth_meta	rna_meta
+GSE121930	GSE121930_series_matrix.txt.gz	GPL13534	30	Epigenomics analysis of ESCC	UNKNOWN	meth_meta	
+GSE52826	GSE52826_series_matrix.txt.gz	GPL13534	12	the whole-genome methylation profile of esophageal squamous cell carcinoma	UNKNOWN	meth_meta	
+GSE38129	GSE38129_series_matrix.txt.gz	GPL571	60	A pilot study of integrative genomics analysis of genes with biallelic loss and its relation to the expression of mRNA a	UNKNOWN	meth_meta	rna_meta
+GSE20347	GSE20347_series_matrix.txt.gz	GPL571	34	Analysis of gene expression in esophageal squamous cell carcinoma (ESCC)	UNKNOWN	meth_meta	rna_meta
+GSE17351	GSE17351_series_matrix.txt.gz	GPL570	10	Expression data from esophageal squamous cell carcinoma (ESCC)	UNKNOWN	meth_meta	rna_meta
+GSE45670	GSE45670_series_matrix.txt.gz	GPL570	38	Expression data from esophageal squamous cell carcinomas and normal esophageal epithelia	UNKNOWN	meth_meta	rna_meta
+GSE161533	GSE161533_series_matrix.txt.gz	GPL570	84	Expression data from esophageal squamous cell carcinoma patients	UNKNOWN	meth_meta	rna_meta
+GSE51287	GSE51287_series_matrix.txt.gz	GPL9183	288	Methylation profiles of esophageal squamous cell carcinoma patients and cancer-free individual in Taiwan.	UNKNOWN	meth_meta	
+GSE77861	GSE77861_series_matrix.txt.gz	GPL570	14	African American esophageal squamous cell carcinoma expression profile reveals loss of detox networks	UNKNOWN	meth_meta	rna_meta
+GSE53624	GSE53624_series_matrix.txt.gz	GPL18109	238	LncRNA profile study reveals a three-lncRNA signature associated with the survival of esophageal squamous cell carcinoma	YES: !Sample_characteristics_ch1 "death at fu: no" "death at fu: no" "death at fu: yes" "death at fu: yes" "death at fu: yes"	meth_meta	rna_meta
+GSE53622	GSE53622_series_matrix.txt.gz	GPL18109	120	LncRNA profile study reveals a three-lncRNA signature associated with the survival of esophageal squamous cell carcinoma	YES: !Sample_characteristics_ch1 "death at fu: yes" "death at fu: yes" "death at fu: no" "death at fu: no" "death at fu: yes"	meth_meta	rna_meta

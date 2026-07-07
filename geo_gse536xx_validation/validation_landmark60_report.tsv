@@ -1,0 +1,5 @@
+dataset	n_patients	events_60mo	c_index_in_sample	note	c_index_holdout	n_features_used	events_60mo_approx
+GSE53624_train	119	72.0	0.7635567531155271	Top-variance lncRNA features; not TCGA gene space			
+GSE53622_test	60	33.0		Model trained GSE53624; features from train only	0.5052928722653494	60.0	
+GSE53625_super_series	179			Union of 53624+53622; same as analyzing subseries separately			105.0
+GSE53622_in_sample	60	33.0	0.8115737473535639	Top-variance lncRNA fit only on GSE53622 (no transfer from 53624)			

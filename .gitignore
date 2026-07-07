@@ -1,0 +1,24 @@
+*.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Local / generated
+result/
+Plots/
+Supplementary/
+*.log
+
+# Large raw data (do not commit)
+data_*.txt
+meta_*.txt
+case_lists/
+geo_gse536xx_validation/*.xlsx
+geo_gse536xx_validation/*.soft.gz
+geo_gse536xx_validation/*.gz
+
+# Manuscript artifacts
+*.docx
+*.bak
+~$*
+

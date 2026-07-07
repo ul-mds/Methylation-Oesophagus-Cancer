@@ -1,0 +1,13 @@
+histology	death_tail_pct	n_cohort	n_os60_deaths	n_fast_death	max_os_months_in_fast_group	n_probes_q_lt_005	n_top200_probes	patient_membership_jaccard	top200_probe_jaccard
+EAC/ESCA	10	89.0	44	10.0	5.91	158.0	200.0		
+EAC/ESCA	20	89.0	44	10.0	5.91	158.0	200.0		
+EAC/ESCA	30	89.0	44	14.0	7.13	62.0	200.0		
+EAC/ESCA	10_vs_20		44					1.0	1.0
+EAC/ESCA	10_vs_30		44					0.7142857142857143	0.3114754098360656
+EAC/ESCA	20_vs_30		44					0.7142857142857143	0.3114754098360656
+ESCC	10	96.0	32	10.0	5.16	68.0	200.0		
+ESCC	20	96.0	32	10.0	5.16	68.0	200.0		
+ESCC	30	96.0	32	10.0	5.16	68.0	200.0		
+ESCC	10_vs_20		32					1.0	1.0
+ESCC	10_vs_30		32					1.0	1.0
+ESCC	20_vs_30		32					1.0	1.0

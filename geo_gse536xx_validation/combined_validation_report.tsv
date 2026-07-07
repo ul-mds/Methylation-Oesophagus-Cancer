@@ -1,0 +1,9 @@
+dataset	metric	value	note
+GSE161533	n_paired_patients_tumor_vs_normal	28.0	Affy GPL570; no OS in GEO
+GSE161533	tcga_escc_union_genes_in_topN_probe_genes	2.0	topN=1200; union_TCGA_n=110; mapped_genes=880
+GSE161533	overlap_cox_expr_genes_in_topN	1.0	SDF4
+GSE161533	overlap_mediation_top80_in_topN	1.0	BCAT1
+GSE53624_train	see_columns		"{""dataset"": ""GSE53624_train"", ""n_patients"": 119, ""events_60mo"": 72.0, ""c_index_in_sample"": 0.7635567531155271, ""note"": ""Top-variance lncRNA features; not TCGA gene space""}"
+GSE53622_test	see_columns		"{""dataset"": ""GSE53622_test"", ""n_patients"": 60, ""events_60mo"": 33.0, ""note"": ""Model trained GSE53624; features from train only"", ""c_index_holdout"": 0.5052928722653494, ""n_features_used"": 60.0}"
+GSE53625_super_series	see_columns		"{""dataset"": ""GSE53625_super_series"", ""n_patients"": 179, ""note"": ""Union of 53624+53622; same as analyzing subseries separately"", ""events_60mo_approx"": 105.0}"
+GSE53622_in_sample	see_columns		"{""dataset"": ""GSE53622_in_sample"", ""n_patients"": 60, ""events_60mo"": 33.0, ""c_index_in_sample"": 0.8115737473535639, ""note"": ""Top-variance lncRNA fit only on GSE53622 (no transfer from 53624)""}"

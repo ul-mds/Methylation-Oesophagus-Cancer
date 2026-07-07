@@ -1,0 +1,481 @@
+[
+  {
+    "num": 1,
+    "status": "NOT FOUND",
+    "ms_year": "2016",
+    "db_year": null,
+    "ms_first": "Thrift",
+    "db_first": "",
+    "ms_journal": "Lancet Gastroenterol Hepatol",
+    "db_journal": "",
+    "doi": null,
+    "doi_in_manuscript": false,
+    "issues": [
+      "Lookup error: HTTP Error 404: Not Found",
+      "DOI in list but not found in Crossref"
+    ],
+    "db_title": ""
+  },
+  {
+    "num": 2,
+    "status": "VERIFIED",
+    "ms_year": "2014",
+    "db_year": "2014",
+    "ms_first": "Spechler",
+    "db_first": "Spechler",
+    "ms_journal": "N Engl J Med",
+    "db_journal": "New England Journal of Medicine",
+    "doi": "10.1056/nejmra1314704",
+    "doi_in_manuscript": false,
+    "issues": [],
+    "db_title": "Barrett's Esophagus"
+  },
+  {
+    "num": 3,
+    "status": "VERIFIED",
+    "ms_year": "2017",
+    "db_year": "2017",
+    "ms_first": "Network",
+    "db_first": "",
+    "ms_journal": "Nature",
+    "db_journal": "Nature",
+    "doi": "10.1038/nature20805",
+    "doi_in_manuscript": false,
+    "issues": [],
+    "db_title": "Integrated genomic characterization of oesophageal carcinoma"
+  },
+  {
+    "num": 4,
+    "status": "VERIFIED",
+    "ms_year": "2025",
+    "db_year": "2025",
+    "ms_first": "Lyu",
+    "db_first": "Lyu",
+    "ms_journal": "BMC Cancer",
+    "db_journal": "BMC Cancer",
+    "doi": "10.1002/eji.201948269",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1002/eji.201948269)"
+    ],
+    "db_title": "Integrated bioinformatics analysis of differences between EAC and ESCC"
+  },
+  {
+    "num": 5,
+    "status": "ISSUES",
+    "ms_year": "2025",
+    "db_year": "2026",
+    "ms_first": "Pinto",
+    "db_first": "Pinto",
+    "ms_journal": "Oncogene",
+    "db_journal": "Oncogene",
+    "doi": "10.1038/s41388-025-03650-3",
+    "doi_in_manuscript": true,
+    "issues": [
+      "Year MS 2025 vs DB 2026"
+    ],
+    "db_title": "Molecular stratification of esophageal adenocarcinoma: implications for prognosi"
+  },
+  {
+    "num": 6,
+    "status": "VERIFIED",
+    "ms_year": "2026",
+    "db_year": "2026",
+    "ms_first": "Cui",
+    "db_first": "Cui",
+    "ms_journal": "Signal Transduct Target Ther",
+    "db_journal": "Signal Transduction and Targeted Therapy",
+    "doi": "10.2967/jnumed.118.222893",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.2967/jnumed.118.222893)"
+    ],
+    "db_title": "The consensus molecular subtypes of esophageal squamous cell carcinoma"
+  },
+  {
+    "num": 7,
+    "status": "VERIFIED",
+    "ms_year": "2022",
+    "db_year": "2022",
+    "ms_first": "Zheng",
+    "db_first": "Zheng",
+    "ms_journal": "Cancers",
+    "db_journal": "Cancers",
+    "doi": "10.1038/s41467-021-25202-5",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1038/s41467-021-25202-5)"
+    ],
+    "db_title": "Genome-Wide DNA Methylation and Gene Expression Profiling Characterizes Molecula"
+  },
+  {
+    "num": 8,
+    "status": "NOT FOUND",
+    "ms_year": "2012",
+    "db_year": null,
+    "ms_first": "Velde",
+    "db_first": "",
+    "ms_journal": "N Engl J Med",
+    "db_journal": "",
+    "doi": null,
+    "doi_in_manuscript": false,
+    "issues": [
+      "Lookup error: HTTP Error 404: Not Found",
+      "DOI in list but not found in Crossref"
+    ],
+    "db_title": ""
+  },
+  {
+    "num": 9,
+    "status": "NOT FOUND",
+    "ms_year": "1970",
+    "db_year": null,
+    "ms_first": "Bremner",
+    "db_first": "",
+    "ms_journal": "Surgery",
+    "db_journal": "",
+    "doi": null,
+    "doi_in_manuscript": false,
+    "issues": [
+      "Lookup error: HTTP Error 404: Not Found",
+      "DOI in list but not found in Crossref"
+    ],
+    "db_title": ""
+  },
+  {
+    "num": 10,
+    "status": "ISSUES",
+    "ms_year": "2002",
+    "db_year": "2002",
+    "ms_first": "Tosh",
+    "db_first": "Frantz",
+    "ms_journal": "Nat Rev Mol Cell Biol",
+    "db_journal": "Nature Reviews Molecular Cell Biology",
+    "doi": "10.1038/nrm754",
+    "doi_in_manuscript": false,
+    "issues": [
+      "First author MS Tosh vs DB Frantz"
+    ],
+    "db_title": "The ultimate stem cell...part 2"
+  },
+  {
+    "num": 11,
+    "status": "ISSUES",
+    "ms_year": "2008",
+    "db_year": "2008",
+    "ms_first": "Sarosi",
+    "db_first": "Deng",
+    "ms_journal": "Dis Esophagus",
+    "db_journal": "Diseases of the Esophagus",
+    "doi": "10.1111/j.1442-2050.2007.00723.x",
+    "doi_in_manuscript": false,
+    "issues": [
+      "First author MS Sarosi vs DB Deng"
+    ],
+    "db_title": "Prevention and management of complications after colon interposition for corrosi"
+  },
+  {
+    "num": 12,
+    "status": "NOT FOUND",
+    "ms_year": "2014",
+    "db_year": null,
+    "ms_first": "Hu",
+    "db_first": "",
+    "ms_journal": "J Gastroenterol",
+    "db_journal": "",
+    "doi": null,
+    "doi_in_manuscript": false,
+    "issues": [
+      "Lookup error: HTTP Error 404: Not Found",
+      "DOI in list but not found in Crossref"
+    ],
+    "db_title": ""
+  },
+  {
+    "num": 13,
+    "status": "VERIFIED",
+    "ms_year": "2024",
+    "db_year": "2024",
+    "ms_first": "Kunene",
+    "db_first": "Kunene",
+    "ms_journal": "ESMO Gastrointest Oncol",
+    "db_journal": "ESMO Gastrointestinal Oncology",
+    "doi": "10.1016/j.esmogo.2024.100091",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1016/j.esmogo.2024.100091)"
+    ],
+    "db_title": "Prognostic markers in oesophageal and gastric cancer review. Are they ready for "
+  },
+  {
+    "num": 14,
+    "status": "NOT FOUND",
+    "ms_year": "1994",
+    "db_year": null,
+    "ms_first": "Mandard",
+    "db_first": "",
+    "ms_journal": "Int J Radiat Oncol Biol Phys",
+    "db_journal": "",
+    "doi": null,
+    "doi_in_manuscript": false,
+    "issues": [
+      "Lookup error: HTTP Error 404: Not Found",
+      "DOI in list but not found in Crossref"
+    ],
+    "db_title": ""
+  },
+  {
+    "num": 15,
+    "status": "VERIFIED",
+    "ms_year": "2025",
+    "db_year": "2025",
+    "ms_first": "Zhang",
+    "db_first": "Zhang",
+    "ms_journal": "BMC Cancer",
+    "db_journal": "BMC Cancer",
+    "doi": "10.1016/j.cancergen.2024.09.001",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1016/j.cancergen.2024.09.001)"
+    ],
+    "db_title": "Multi-omics analysis unveils a four-gene prognostic signature in esophageal squa"
+  },
+  {
+    "num": 16,
+    "status": "VERIFIED",
+    "ms_year": "2024",
+    "db_year": "2024",
+    "ms_first": "Consortium",
+    "db_first": "Ng",
+    "ms_journal": "Nat Commun",
+    "db_journal": "Nature Communications",
+    "doi": "10.1038/s41467-024-47619-4",
+    "doi_in_manuscript": false,
+    "issues": [],
+    "db_title": "Disentangling oncogenic amplicons in esophageal adenocarcinoma"
+  },
+  {
+    "num": 17,
+    "status": "VERIFIED",
+    "ms_year": "2025",
+    "db_year": "2025",
+    "ms_first": "Chang",
+    "db_first": "Chang",
+    "ms_journal": "Discov Oncol",
+    "db_journal": "Discover Oncology",
+    "doi": "10.1007/s12149-022-01733-9",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1007/s12149-022-01733-9)"
+    ],
+    "db_title": "Construction of a multimodal esophageal cancer prognostic model with screening o"
+  },
+  {
+    "num": 18,
+    "status": "VERIFIED",
+    "ms_year": "2024",
+    "db_year": "2024",
+    "ms_first": "Tang",
+    "db_first": "Tang",
+    "ms_journal": "J Cell Mol Med",
+    "db_journal": "Journal of Cellular and Molecular Medicine",
+    "doi": "10.1038/d41591-021-00022-8",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1038/d41591-021-00022-8)"
+    ],
+    "db_title": "Integrated machine learning developed a prognosis\u2010related gene signature to pred"
+  },
+  {
+    "num": 19,
+    "status": "VERIFIED",
+    "ms_year": "2025",
+    "db_year": "2025",
+    "ms_first": "Tuersun",
+    "db_first": "Tuersun",
+    "ms_journal": "Front Physiol",
+    "db_journal": "Frontiers in Physiology",
+    "doi": "10.1002/mco2.297",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1002/mco2.297)"
+    ],
+    "db_title": "Interpretable machine learning models to predict survival in esophageal cancer: "
+  },
+  {
+    "num": 20,
+    "status": "VERIFIED",
+    "ms_year": "2022",
+    "db_year": "2022",
+    "ms_first": "Pu",
+    "db_first": "Pu",
+    "ms_journal": "J Gastrointest Oncol",
+    "db_journal": "Journal of Gastrointestinal Oncology",
+    "doi": "10.21037/atm-20-4625",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.21037/atm-20-4625)"
+    ],
+    "db_title": "Estimating the prognosis of esophageal squamous cell carcinoma based on The Canc"
+  },
+  {
+    "num": 21,
+    "status": "NOT FOUND",
+    "ms_year": "2019",
+    "db_year": null,
+    "ms_first": "Li",
+    "db_first": "",
+    "ms_journal": "Cancer Cell Int",
+    "db_journal": "",
+    "doi": null,
+    "doi_in_manuscript": false,
+    "issues": [
+      "Lookup error: HTTP Error 404: Not Found",
+      "DOI in list but not found in Crossref"
+    ],
+    "db_title": ""
+  },
+  {
+    "num": 22,
+    "status": "ISSUES",
+    "ms_year": "2021",
+    "db_year": "2021",
+    "ms_first": "Chen",
+    "db_first": "Wu",
+    "ms_journal": "Biomed Res Int",
+    "db_journal": "Shock and Vibration",
+    "doi": "10.1155/2021/6690910",
+    "doi_in_manuscript": false,
+    "issues": [
+      "First author MS Chen vs DB Wu"
+    ],
+    "db_title": "Influence of External Jet on Hydraulic Performance and Flow Field Characteristic"
+  },
+  {
+    "num": 23,
+    "status": "NOT FOUND",
+    "ms_year": "2020",
+    "db_year": null,
+    "ms_first": "Cao",
+    "db_first": "",
+    "ms_journal": "Nat Commun",
+    "db_journal": "",
+    "doi": null,
+    "doi_in_manuscript": false,
+    "issues": [
+      "Lookup error: HTTP Error 404: Not Found",
+      "DOI in list but not found in Crossref"
+    ],
+    "db_title": ""
+  },
+  {
+    "num": 24,
+    "status": "NOT FOUND",
+    "ms_year": "2022",
+    "db_year": null,
+    "ms_first": "Xi",
+    "db_first": "",
+    "ms_journal": "Signal Transduct Target Ther",
+    "db_journal": "",
+    "doi": null,
+    "doi_in_manuscript": false,
+    "issues": [
+      "Lookup error: HTTP Error 404: Not Found",
+      "DOI in list but not found in Crossref"
+    ],
+    "db_title": ""
+  },
+  {
+    "num": 25,
+    "status": "VERIFIED",
+    "ms_year": "2026",
+    "db_year": "2026",
+    "ms_first": "Zhao",
+    "db_first": "Zhao",
+    "ms_journal": "Protein Cell",
+    "db_journal": "Protein &amp; Cell",
+    "doi": "10.1093/procel/pwag005",
+    "doi_in_manuscript": true,
+    "issues": [],
+    "db_title": "Advances in multi-omics for esophageal squamous cell carcinoma: diagnostic, prog"
+  },
+  {
+    "num": 26,
+    "status": "VERIFIED",
+    "ms_year": "2024",
+    "db_year": "2024",
+    "ms_first": "Xu",
+    "db_first": "Xu",
+    "ms_journal": "Front Genet",
+    "db_journal": "Frontiers in Genetics",
+    "doi": "10.1038/cdd.2016.145",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1038/cdd.2016.145)"
+    ],
+    "db_title": "DNA methylation markers in esophageal cancer"
+  },
+  {
+    "num": 27,
+    "status": "VERIFIED",
+    "ms_year": "2025",
+    "db_year": "2025",
+    "ms_first": "Tang",
+    "db_first": "Tang",
+    "ms_journal": "Front Oncol",
+    "db_journal": "Frontiers in Oncology",
+    "doi": "10.18632/oncotarget.13510",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.18632/oncotarget.13510)"
+    ],
+    "db_title": "DNA methylation in esophageal cancer: technological advances and early detection"
+  },
+  {
+    "num": 28,
+    "status": "VERIFIED",
+    "ms_year": "2025",
+    "db_year": "2025",
+    "ms_first": "Wang",
+    "db_first": "Wang",
+    "ms_journal": "Cancer Cell Int",
+    "db_journal": "Cancer Cell International",
+    "doi": "10.1016/j.trecan.2020.02.007",
+    "doi_in_manuscript": false,
+    "issues": [
+      "MS missing DOI (verified: https://doi.org/10.1016/j.trecan.2020.02.007)"
+    ],
+    "db_title": "Analysis of the associations between DNA methylation and clinical features revea"
+  },
+  {
+    "num": 29,
+    "status": "ISSUES",
+    "ms_year": "2012",
+    "db_year": "2013",
+    "ms_first": "Carter",
+    "db_first": "Nordstr\u00f6m",
+    "ms_journal": "Nat Biotechnol",
+    "db_journal": "Nature Biotechnology",
+    "doi": "10.1038/nbt.2515",
+    "doi_in_manuscript": false,
+    "issues": [
+      "Year MS 2012 vs DB 2013",
+      "First author MS Carter vs DB Nordstr\u00f6m"
+    ],
+    "db_title": "Mutation identification by direct comparison of whole-genome sequencing data fro"
+  },
+  {
+    "num": 30,
+    "status": "VERIFIED",
+    "ms_year": "2015",
+    "db_year": "2015",
+    "ms_first": "Liberzon",
+    "db_first": "Liberzon",
+    "ms_journal": "Cell Syst",
+    "db_journal": "Cell Systems",
+    "doi": "10.1016/j.cels.2015.12.004",
+    "doi_in_manuscript": false,
+    "issues": [],
+    "db_title": "The Molecular Signatures Database Hallmark Gene Set Collection"
+  }
+]

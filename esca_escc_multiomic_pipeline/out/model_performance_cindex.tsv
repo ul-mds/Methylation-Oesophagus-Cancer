@@ -1,0 +1,6 @@
+model	test	c_index	n	endpoint
+ESCA_only	ESCC	0.4691211401425178	95	OS_60mo_landmark
+ESCA_only	ESCA	0.8940955951265229	89	OS_60mo_landmark
+ESCC_only	ESCA	0.45032802249297094	89	OS_60mo_landmark
+ESCC_only	ESCC	0.9008313539192399	95	OS_60mo_landmark
+pooled_strataHIST	pooled	0.8030383091149274	184	OS_60mo_landmark

@@ -1,0 +1,15 @@
+=== Scientific Reports format checklist (Manuscript First.docx) ===
+Title words: 14 (limit 20) — PASS
+Abstract words: 175 (limit 200) — PASS
+Abstract no refs: PASS
+Keywords: 5 (limit 6) — PASS
+Main text words (Intro→Methods): 3653 (limit 4500) — PASS
+Section order:
+  Introduction: present
+  Results: present
+  Discussion: present
+  Methods: present
+  References: present
+  Figure legends: present
+Body structure: Introduction → Results → Discussion → Methods (SR guideline)
+End matter: References, Acknowledgements, Author contributions, Data availability, Competing interests, Figure legends, Supplementary Information

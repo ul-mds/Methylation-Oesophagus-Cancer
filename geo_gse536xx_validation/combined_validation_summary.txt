@@ -1,0 +1,20 @@
+=== GSE161533 vs TCGA ESCC gene lists ===
+Paired patients (tumor vs normal): 28
+TCGA union genes (Cox expr + mediation top80): n=110
+Genes from union found among top-1200 DE probes (mygene-mapped): 2
+  Cox expr genes hit: 1 / 60
+  Mediation top80 hit: 1 / 80
+
+=== GSE53624 / GSE53622 lncRNA + 60mo landmark Cox ===
+              dataset  n_patients  events_60mo  c_index_in_sample                                                              note  c_index_holdout  n_features_used  events_60mo_approx
+       GSE53624_train         119         72.0           0.763557                 Top-variance lncRNA features; not TCGA gene space              NaN              NaN                 NaN
+        GSE53622_test          60         33.0                NaN                  Model trained GSE53624; features from train only         0.505293             60.0                 NaN
+GSE53625_super_series         179          NaN                NaN      Union of 53624+53622; same as analyzing subseries separately              NaN              NaN               105.0
+   GSE53622_in_sample          60         33.0           0.811574 Top-variance lncRNA fit only on GSE53622 (no transfer from 53624)              NaN              NaN                 NaN
+
+Interpretation (short):
+- GSE161533: TCGA ESCC Cox+mediation gene union vs top-1200 |log2FC| tumor-normal: 2 genes overlap (Cox hits 1/60, mediation 1/80).
+  Low overlap is expected: TCGA features are prognosis/meth-coupled, not pure tumor-normal DE.
+  GSE161533 still supports generic ESCC biology (paired DE); OS/Cox not available in GEO.
+- GSE53624/22: lncRNA + 60mo penalized Cox — strong in-cohort fit (C~0.76 train), holdout C~0.50
+  (53624->53622), so prognostic transfer is weak; not TCGA mRNA space.
