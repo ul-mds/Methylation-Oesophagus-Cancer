@@ -1,42 +1,42 @@
-## TCGA ESCA/ESCC — code package (Scientific Reports submission)
+## TCGA ESCA/ESCC — analysis code (Cancer Medicine)
 
-Bu klasör (`code/repo/`), bu manuscript için ürettiğimiz **kodları** GitHub’a koymaya hazır şekilde paketler.
+Public code companion for the **Cancer Medicine** manuscript on histology-specific methylation and prognostic transfer in TCGA esophageal carcinoma (ESCA vs ESCC).
 
-### Klasör yapısı
+**Repository:** https://github.com/ul-mds/Methylation-Oesophagus-Cancer  
+**Author guidelines:** https://onlinelibrary.wiley.com/page/journal/20457634/homepage/forauthors.html
 
-- `esca_escc_multiomic_pipeline/`: ana TCGA analizi + figür/tablo üretimi + manuscript düzeltme scriptleri
-- `geo_gse536xx_validation/`: GEO modülleri (scriptler + küçük raporlar)
-- `submission_prep/`: submission hazırlık notları / checklist / dokümanlar
-- `reference_verification_report.json`: referans doğrulama raporu
-- `scientific_reports_format_check_report.txt`: SR format kontrol raporu
+### Layout
 
-### Bilerek dahil edilmeyen (GitHub için çok büyük / redistribüsyon uygun değil)
+- `esca_escc_multiomic_pipeline/` — TCGA models, figures, tables, and optional manuscript formatting utilities
+- `geo_gse536xx_validation/` — GEO validation scripts
+- `submission_prep/` — checklists and submission notes
+- `cancer_medicine_format_check_report.txt` — format checklist snapshot (legacy manuscript filename)
 
-- **Ham TCGA Firehose Legacy dosyaları** (`data_*.txt`, `meta_*.txt`, `case_lists/`)
-- `result/`, `Plots/`, `Supplementary/` (çıktılar ve büyük dosyalar)
-- GEO ham dosyaları (`*.xlsx`, `*.soft.gz`)
-- Manuscript `.docx` ve `.bak` yedekleri
+### Not included (download separately)
 
-Bu dosyalar için “Data availability” kısmındaki kaynaklardan yeniden indirmeniz gerekir.
+- Raw TCGA Firehose Legacy TSVs (`data_*.txt`, `meta_*.txt`, `case_lists/`)
+- Large outputs (`result/`, `Plots/`, supplementary bundles)
+- Manuscript `.docx` files (see local `Cancer Medicine submission_package`)
 
-### Çalıştırma (özet)
+### Reproduction
 
-Proje kökünden (bu repo kökü) çalıştırın:
+From this repository root (with TCGA files in `ESCA_STUDY_ROOT` or current directory as documented in each script):
 
 ```bash
-# ana TCGA pipeline (modeller + etkileşimler + mediation vb.)
+pip install -r requirements.txt
+
 python3 -m esca_escc_multiomic_pipeline.run_all
-
-# fast-death sensitivity → Supplementary Table S10
 python3 -m esca_escc_multiomic_pipeline.run_fast_death_sensitivity
-
-# figürler
 python3 -m esca_escc_multiomic_pipeline.make_plots
 python3 -m esca_escc_multiomic_pipeline.make_methylation_os_plots
-
-# GEO modülleri (ham GEO dosyaları gerekiyorsa)
 python3 geo_gse536xx_validation/run_combined_validation_161533_53624.py
 ```
 
-> Not: `result/` ve `Plots/` gibi çıktı klasörleri scriptler tarafından tekrar üretilecektir (ham veriler mevcutsa).
+For manuscript packaging scripts that target `Cancer Medicine submission_package`, set:
 
+```bash
+export ESCA_STUDY_ROOT="/path/to/Esophageal Carcinoma (TCGA, Firehose Legacy)"
+export CM_SUBMISSION_PACKAGE="$ESCA_STUDY_ROOT/Cancer Medicine submission_package"
+```
+
+Figures use **Times New Roman** styling per Cancer Medicine figure preparation (`plot_style.py`).

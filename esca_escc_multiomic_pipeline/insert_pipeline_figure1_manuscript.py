@@ -4,6 +4,8 @@ renumber existing figures (1→2 … 4→5), cite Fig. 1 in Methods, and audit c
 """
 from __future__ import annotations
 
+from esca_escc_multiomic_pipeline.study_paths import study_root
+
 import argparse
 import re
 import shutil
@@ -18,7 +20,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches
 from docx.text.paragraph import Paragraph
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 W_T = qn("w:t")
 W_R = qn("w:r")
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript.docx"
@@ -345,14 +347,14 @@ def patch_manuscript(docx_path: Path | None = None) -> Path:
 
         # Update display-items note (preserve any paragraph formatting)
         display_note = (
-            "Scientific Reports allows at most eight combined Fig.s and tables in the main article. "
+            "Cancer Medicine author guidelines note: at most eight combined Fig.s and tables in the main article. "
             "This manuscript currently includes five Fig.s and four tables (nine display items). "
             "Before submission, move at least one item to Supplementary Information or merge panels, "
             "and cite each in the main text using the word Supplementary "
             "(e.g. Supplementary Table S1; Supplementary Fig. S1)."
         )
         for p in doc.paragraphs:
-            if "Scientific Reports allows at most eight combined" in (p.text or ""):
+            if "Cancer Medicine author guidelines note: at most eight combined" in (p.text or ""):
                 _set_paragraph_text_preserve_first_run_rpr(p, display_note)
                 break
 

@@ -8,6 +8,8 @@ Manuscript First.docx:
 """
 from __future__ import annotations
 
+from esca_escc_multiomic_pipeline.study_paths import study_root
+
 import argparse
 import re
 import shutil
@@ -17,7 +19,7 @@ from docx import Document
 from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript First.docx"
 W_T = qn("w:t")
 

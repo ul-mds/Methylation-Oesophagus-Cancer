@@ -1,6 +1,6 @@
 """
-Format Manuscript First.docx for Scientific Reports submission guidelines:
-https://www.nature.com/srep/author-instructions/submission-guidelines
+Format Manuscript First.docx for Cancer Medicine submission guidelines:
+https://onlinelibrary.wiley.com/page/journal/20457634/homepage/forauthors.html
 
 - Body order: Introduction → Results → Discussion (no subheadings) → Methods
 - Merge Limitations + Conclusions into Discussion
@@ -13,6 +13,8 @@ https://www.nature.com/srep/author-instructions/submission-guidelines
 """
 from __future__ import annotations
 
+from esca_escc_multiomic_pipeline.study_paths import study_root
+
 import argparse
 import re
 import shutil
@@ -23,7 +25,7 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript First.docx"
 W_T = qn("w:t")
 W_P = qn("w:p")
@@ -268,14 +270,14 @@ def _apply_table_grid(doc: Document) -> None:
 
 def _update_display_note(doc: Document) -> None:
     note = (
-        "Scientific Reports allows at most eight combined figures and tables in the main article. "
+        "Cancer Medicine author guidelines note: at most eight combined figures and tables in the main article. "
         "This manuscript currently includes five figures and four tables (nine display items). "
         "Before submission, move at least one item to Supplementary Information or merge panels, "
         "and cite each in the main text using the word Supplementary "
         "(e.g. Supplementary Table S1; Supplementary Fig. S1)."
     )
     for p in doc.paragraphs:
-        if "Scientific Reports" in (p.text or "") and "display item" in (p.text or "").lower():
+        if "Cancer Medicine" in (p.text or "") and "display item" in (p.text or "").lower():
             for r in list(p.runs):
                 r._r.getparent().remove(r._r)
             p.add_run(note)
@@ -302,7 +304,7 @@ def _write_checklist_report(doc: Document, path: Path) -> None:
     for name in ("Introduction", "Results", "Discussion", "Methods", "References", "Figure legends"):
         sections.append(f"  {name}: {'present' if any(p.text.strip() == name for p in paras) else 'MISSING'}")
     lines = [
-        "=== Scientific Reports format checklist (Manuscript First.docx) ===",
+        "=== Cancer Medicine format checklist (Manuscript First.docx) ===",
         f"Title words: {title_w} (limit 20) — {'PASS' if title_w <= 20 else 'FAIL'}",
         f"Abstract words: {abs_w} (limit 200) — {'PASS' if abs_w <= 200 else 'FAIL'}",
         f"Abstract no refs: {'PASS' if not abs_refs else 'FAIL'}",

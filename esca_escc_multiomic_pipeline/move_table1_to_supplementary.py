@@ -8,6 +8,8 @@ Move main-text Table 1 to Supplementary Table S1:
 """
 from __future__ import annotations
 
+from esca_escc_multiomic_pipeline.study_paths import study_root
+
 import argparse
 import copy
 import re
@@ -18,7 +20,7 @@ from docx import Document
 from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript First.docx"
 W_T = qn("w:t")
 W_TBL = qn("w:tbl")
@@ -134,14 +136,14 @@ def move_table1(docx_path: Path) -> None:
 
     # Display-items note
     note = (
-        "Scientific Reports allows at most eight combined figures and tables in the main article. "
+        "Cancer Medicine author guidelines note: at most eight combined figures and tables in the main article. "
         "This manuscript currently includes five figures and three tables (eight display items). "
         "Concordance-index summaries formerly in main-text Table 1 appear as Supplementary Table S1. "
         "Before submission, cite each supplementary item in the main text using the word Supplementary "
         "(e.g. Supplementary Table S1; Supplementary Fig. S1)."
     )
     for p in doc.paragraphs:
-        if "Scientific Reports allows at most eight combined" in (p.text or ""):
+        if "Cancer Medicine author guidelines note: at most eight combined" in (p.text or ""):
             for r in list(p.runs):
                 r._r.getparent().remove(r._r)
             p.add_run(note)

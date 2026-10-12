@@ -1,5 +1,5 @@
 """
-Check manuscript against Scientific Reports 'Format of articles' (and related) rules.
+Check manuscript against Cancer Medicine 'Format of articles' (and related) rules.
 
 Reports: title word count, abstract (official 200 vs draft), keywords (≤6),
 main-text word count excluding Abstract, Methods, References, figure legends (≤4500),
@@ -76,7 +76,7 @@ def main() -> None:
     )
 
     lines = []
-    lines.append("=== Scientific Reports — Format of articles (checklist) ===\n")
+    lines.append("=== Cancer Medicine — Format of articles (checklist) ===\n")
     lines.append("Article type: assume standard Article (not Registered Report) — confirm at submission. PASS (manual).")
     lines.append(
         "Length: ideally ≤11 typeset pages — cannot be measured from Word; compare to similar SR papers or use "

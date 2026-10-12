@@ -122,4 +122,4 @@ Your within-lineage performance is **consistent with**, not superior to, prior w
 
 - **Publishable novelty exists**, concentrated in the **transportability-failure** message and the **SHISA3 directional anomaly**.
 - Biomarker-panel novelty alone would be incremental (the field is crowded).
-- Position the paper as a **cautionary, methodological + epigenetic-discovery** study, not a "new prognostic signature" paper — this matches Scientific Reports' soundness-over-impact model and reduces overclaiming risk.
+- Position the paper as a **cautionary, methodological + epigenetic-discovery** study, not a "new prognostic signature" paper — this matches Cancer Medicine's soundness-over-impact model and reduces overclaiming risk.

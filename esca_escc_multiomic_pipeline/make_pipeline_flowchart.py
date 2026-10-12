@@ -4,6 +4,8 @@ Output: Plots/00_analysis_pipeline_flowchart.png (+ .pdf)
 """
 from __future__ import annotations
 
+from esca_escc_multiomic_pipeline.study_paths import study_root
+
 import textwrap
 from pathlib import Path
 
@@ -12,7 +14,7 @@ import matplotlib.patches as mpatches
 from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch, Polygon, Rectangle, Wedge
 import numpy as np
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 OUT_DIR = STUDY_ROOT / "Plots"
 
 # Layout
@@ -708,7 +710,7 @@ def main() -> None:
                   "A", icon="tcga")
     g_harm = _box(ax, x0 + bw + gap, yA + BOX_Y_OFF, bw, BOX_H,
                   "Sample harmonisation",
-                  "• Primary tumours only\n• EAC (n≈89) vs ESCC (n≈96)\n• Omics overlap filter\n• OncoTree histology",
+                  "• Primary tumors only\n• EAC (n=89) vs ESCC (n=95)\n• Omics overlap filter\n• OncoTree histology",
                   "A", icon="harmonize")
     g_geo = _box(ax, x0 + 2 * (bw + gap), yA + BOX_Y_OFF, bw + 0.4, BOX_H,
                  "External GEO cohorts",
@@ -723,13 +725,13 @@ def main() -> None:
     hB = SECTION_H
     _section_band(ax, yB, hB, "B", "B   Pre-processing & endpoint")
     bwB = 4.35
-    g_os60 = _box(ax, x0, yB + BOX_Y_OFF, bwB, BOX_H, "OS60 landmark",
+    g_os60 = _box(ax, x0, yB + BOX_Y_OFF, bwB, BOX_H, "OS60 truncated endpoint",
                   "• Truncate follow-up at 60\u00a0mo.\n• Late events censored", "B", icon="clock",
                   nowrap_body=True)
     g_feat = _box(ax, x0 + bwB + 0.35, yB + BOX_Y_OFF, bwB, BOX_H, "Feature matrix",
                   "• Paired expr\u00a0+\u00a0meth\n• ≤60 genes per histology\n• Median imputation", "B", icon="matrix",
                   nowrap_body=True)
-    g_fast = _box(ax, x0 + 2 * (bwB + 0.35), yB + BOX_Y_OFF, bwB + 0.15, BOX_H, "Fast-death phenotype",
+    g_fast = _box(ax, x0 + 2 * (bwB + 0.35), yB + BOX_Y_OFF, bwB + 0.15, BOX_H, "Short-survival phenotype",
                   "• Shortest-survival tail\n• Among OS60 decedents\n• 10–30% (min n=10)", "B", icon="fast_death")
     g_mut = _box(ax, x0 + 3 * (bwB + 0.35) + 0.15, yB + BOX_Y_OFF, bwB + 0.25, BOX_H, "Mutation matrix",
                  "• Top 80 mutated genes\n• Binary calls (≥8 mutants)", "B", icon="mutation")
@@ -745,14 +747,14 @@ def main() -> None:
     _section_band(ax, yC, hC, "C", "C   Machine-learning / survival models")
     g_cox = _box(ax, x0, yC + BOX_Y_OFF, 6.1, BOX_H,
                  "Elastic-net Cox PH",
-                 "• lifelines CoxPHFitter\n• penalizer=0.1, l1=0.5\n• EAC-only / ESCC-only / pooled\n• Cross-apply coefficients",
+                 "• CoxPHFitter: elastic net\n• EAC / ESCC / pooled\n• Fixed-coefficient transfer",
                  "C", icon="elastic_net")
     g_cidx = _box(ax, x0 + 6.45, yC + BOX_Y_OFF, 5.8, BOX_H,
                   "Model performance",
-                  "• Harrell C-index\n• Within vs cross-lineage\n• GDC 2025: 5-fold CV", "C", icon="cindex")
+                  "• Harrell C-index\n• Within-/cross-lineage\n• GDC 2025: 5-fold CV", "C", icon="cindex")
     g_geocox = _box(ax, x0 + 12.55, yC + BOX_Y_OFF, 6.0, BOX_H,
                     "GEO penalized Cox (lncRNA)",
-                    "• Elastic-net Cox on GSE53624\n• Top-60 lncRNA features\n• Scoring on GSE53622", "C", icon="geo_cox",
+                    "• Elastic-net: GSE53624\n• Top-60 lncRNAs\n• Fixed scoring: GSE53622", "C", icon="geo_cox",
                     icon_frac=0.50, icon_extend_left=0.30, title_oneline=True, icon_scale_mul=0.82)
     _, ec, _ = _sec("C")
     _arrow(ax, _anchor(g_cox, "right"), _anchor(g_cidx, "left"), color=ec)
@@ -765,7 +767,7 @@ def main() -> None:
     _section_band(ax, yD, hD, "D", "D   Biostatistical tests & corrections")
     g_volc = _box(ax, x0, yD + BOX_Y_OFF, bwB, BOX_H,
                   "Differential methylation",
-                  "• Fast-death vs others\n• Welch t-test (HM450 β)\n• BH-FDR (q_diff)", "D", icon="volcano")
+                  "• Short-survival vs others\n• Welch t-test (HM450 β)\n• BH-FDR (q_diff)", "D", icon="volcano")
     g_jacc = _box(ax, x0 + bwB + 0.35, yD + BOX_Y_OFF, bwB, BOX_H,
                   "Sensitivity",
                   "• Patient-set Jaccard\n• Probe-set Jaccard\n• 10 / 20 / 30% tails", "D", icon="jaccard",

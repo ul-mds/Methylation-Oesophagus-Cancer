@@ -1,5 +1,5 @@
 """
-Scientific Reports — 'Format of articles' checklist (title page, abstract).
+Cancer Medicine — 'Format of articles' checklist (title page, abstract).
 
 - Replaces abstract with an unstructured, reference-free text of ≤200 words (SR limit).
 - Inserts a minimal title page (authors*, affiliation, corresponding contact placeholders)

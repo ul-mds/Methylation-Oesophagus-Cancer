@@ -5,8 +5,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from .plot_style import apply_publication_style, save_publication_figure
-from .survival_60mo import truncate_os_at_months
+try:
+    from .plot_style import apply_publication_style, bolden_axis_text, save_publication_figure
+    from .survival_60mo import truncate_os_at_months
+except ImportError:
+    from plot_style import apply_publication_style, bolden_axis_text, save_publication_figure
+    from survival_60mo import truncate_os_at_months
 
 OS_LANDMARK_MONTHS = 60.0
 
@@ -15,7 +19,7 @@ def _load_result(base: Path, name: str) -> pd.DataFrame:
     return pd.read_csv(base / "result" / name, sep="\t")
 
 
-def _volcano_on_ax(ax, df: pd.DataFrame, title: str, n_labels: int = 6):
+def _volcano_on_ax(ax, df: pd.DataFrame, n_labels: int = 5):
     d = df.dropna(subset=["delta_fast_minus_other", "q_diff"]).copy()
     if d.empty:
         ax.set_visible(False)
@@ -30,19 +34,25 @@ def _volcano_on_ax(ax, df: pd.DataFrame, title: str, n_labels: int = 6):
         edgecolors="none",
     )
     ax.axvline(0, color="#4b5563", linewidth=1.2)
-    ax.set_xlabel("Δβ (fast-death − other)", fontsize=14, fontweight="bold")
+    ax.set_xlabel("Δβ (short-survival − other)", fontsize=14, fontweight="bold")
     ax.set_ylabel("-log10(q_diff)", fontsize=14, fontweight="bold")
-    ax.set_title(title, fontsize=15, fontweight="bold")
     ax.tick_params(axis="both", which="major", labelsize=12)
+    bolden_axis_text(ax)
     lab = d.nsmallest(n_labels, "q_diff")
-    for _, r in lab.iterrows():
+    offsets = [(6, 8), (8, 24), (-8, -20), (8, 40), (-8, -36)]
+    for (_, r), (dx, dy) in zip(lab.iterrows(), offsets):
         ax.annotate(
             str(r["gene_token"]),
             (r["delta_fast_minus_other"], r["neglog10q"]),
-            fontsize=12,
+            xytext=(dx, dy),
+            textcoords="offset points",
+            ha="left" if dx > 0 else "right",
+            fontsize=10,
             fontweight="bold",
+            fontstyle="italic",
             color="#111827",
             alpha=1.0,
+            arrowprops={"arrowstyle": "-", "color": "#6b7280", "lw": 0.6},
         )
 
 
@@ -60,16 +70,17 @@ def _bars_on_ax(ax, df: pd.DataFrame, title: str):
     colors = ["#2563eb" if v < 0 else "#f59e0b" for v in top["delta_fast_minus_other"]]
     ax.barh(top["gene_token"].astype(str), top["delta_fast_minus_other"], color=colors)
     ax.axvline(0, color="black", linewidth=1.2)
-    ax.set_xlabel("Δβ (fast-death − other)", fontsize=14, fontweight="bold")
+    ax.set_xlabel("Δβ (short-survival − other)", fontsize=14, fontweight="bold")
     ax.set_title(title, fontsize=15, fontweight="bold")
     ax.tick_params(axis="x", which="major", labelsize=12)
     ax.tick_params(axis="y", which="major", labelsize=12)
     for lab in ax.get_yticklabels():
         lab.set_fontweight("bold")
+        lab.set_fontstyle("italic")
 
 
 def _make_fastdeath_combined_panels(base: Path):
-    """Figure 2 (volcano side-by-side) and Figure 3 (bar side-by-side)."""
+    """Create component plots and the final 2×2 Figure 3."""
     import matplotlib.pyplot as plt
     import seaborn as sns
 
@@ -82,16 +93,8 @@ def _make_fastdeath_combined_panels(base: Path):
 
     # Larger canvas + higher DPI for better readability in Word exports.
     fig, axes = plt.subplots(1, 2, figsize=(16, 6.6), sharey=True)
-    _volcano_on_ax(
-        axes[0],
-        df_e,
-        f"EAC: fast-death differential methylation (OS{int(OS_LANDMARK_MONTHS)})",
-    )
-    _volcano_on_ax(
-        axes[1],
-        df_s,
-        f"ESCC: fast-death differential methylation (OS{int(OS_LANDMARK_MONTHS)})",
-    )
+    _volcano_on_ax(axes[0], df_e)
+    _volcano_on_ax(axes[1], df_s)
     fig.tight_layout()
     # 600 dpi to keep labels crisp after Word downsampling.
     fig.savefig(plot_dir / "02_fastdeath_methylation_volcano_panel.png", dpi=600, bbox_inches="tight", facecolor="white", edgecolor="none")
@@ -101,15 +104,45 @@ def _make_fastdeath_combined_panels(base: Path):
     _bars_on_ax(
         axes[0],
         df_e,
-        f"EAC: top hypo/hyper in fast-death (OS{int(OS_LANDMARK_MONTHS)})",
+        f"EAC: top hypo/hyper in short survival (OS{int(OS_LANDMARK_MONTHS)})",
     )
     _bars_on_ax(
         axes[1],
         df_s,
-        f"ESCC: top hypo/hyper in fast-death (OS{int(OS_LANDMARK_MONTHS)})",
+        f"ESCC: top hypo/hyper in short survival (OS{int(OS_LANDMARK_MONTHS)})",
     )
     fig.tight_layout()
     fig.savefig(plot_dir / "03_fastdeath_top_hypo_hyper_panel.png", dpi=600, bbox_inches="tight", facecolor="white", edgecolor="none")
+    plt.close(fig)
+
+    fig, axes = plt.subplots(
+        2,
+        2,
+        figsize=(16, 13),
+        gridspec_kw={"height_ratios": [1.0, 1.15]},
+    )
+    _volcano_on_ax(axes[0, 0], df_e)
+    _volcano_on_ax(axes[0, 1], df_s)
+    axes[0, 0].set_title("EAC", fontsize=15, fontweight="bold")
+    axes[0, 1].set_title("ESCC", fontsize=15, fontweight="bold")
+    _bars_on_ax(axes[1, 0], df_e, "EAC ranked gene-level features")
+    _bars_on_ax(axes[1, 1], df_s, "ESCC ranked gene-level features")
+    axes[0, 0].text(
+        -0.14, 1.10, "A", transform=axes[0, 0].transAxes,
+        fontsize=18, fontweight="bold", va="top",
+    )
+    axes[1, 0].text(
+        -0.14, 1.10, "B", transform=axes[1, 0].transAxes,
+        fontsize=18, fontweight="bold", va="top",
+    )
+    fig.tight_layout(h_pad=2.4, w_pad=1.8)
+    fig.savefig(
+        plot_dir / "03_fastdeath_methylation_combined_A_volcano_B_ranked.png",
+        dpi=600,
+        bbox_inches="tight",
+        facecolor="white",
+        edgecolor="none",
+    )
     plt.close(fig)
 
 
@@ -180,12 +213,18 @@ def _plot_km_on_ax(ax, probe: str, hist_label: str, master: pd.DataFrame, meth: 
     kmf = KaplanMeierFitter()
     for lab, subg in [("High meth.", g1), ("Low meth.", g0)]:
         kmf.fit(subg["OS_MONTHS_60"], event_observed=subg["OS_EVENT_60"], label=f"{lab} (n={len(subg)})")
-        kmf.plot(ax=ax, ci_show=False, linewidth=2.8)
+        kmf.plot(
+            ax=ax,
+            ci_show=False,
+            show_censors=True,
+            censor_styles={"marker": "|", "ms": 7, "mew": 1.4},
+            linewidth=2.8,
+        )
     ax.set_xlim(0, OS_LANDMARK_MONTHS)
     ax.set_xlabel("Months", fontsize=13, fontweight="bold")
     ax.set_ylabel("Survival probability", fontsize=13, fontweight="bold")
     ax.set_title(
-        f"{hist_label}\n{probe}\nlog-rank p={lr.p_value:.3g}",
+        f"{hist_label}\n$\\it{{{probe}}}$\nlog-rank p={lr.p_value:.3g}",
         fontsize=13,
         fontweight="bold",
     )
@@ -221,7 +260,7 @@ def _make_combined_km_panel(base: Path, top_k: int = 3):
 
     fig, axes = plt.subplots(2, 3, figsize=(14, 8), sharex=True)
     for j, probe in enumerate(pe[:3]):
-        _plot_km_on_ax(axes[0, j], probe, "ESCA/EAC", esca, meth)
+        _plot_km_on_ax(axes[0, j], probe, "EAC", esca, meth)
     for j in range(len(pe), 3):
         axes[0, j].set_visible(False)
 

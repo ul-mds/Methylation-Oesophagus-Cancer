@@ -6,6 +6,8 @@ Only inline Results/Introduction captions (Fig. N.) — not the trailing Figure 
 """
 from __future__ import annotations
 
+from esca_escc_multiomic_pipeline.study_paths import study_root
+
 import argparse
 import re
 import shutil
@@ -19,7 +21,7 @@ from docx.oxml import OxmlElement
 from docx.shared import Inches
 from docx.text.paragraph import Paragraph
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript First.docx"
 PLOT_DIR = STUDY_ROOT / "Plots"
 

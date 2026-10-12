@@ -1,4 +1,4 @@
-=== Scientific Reports format checklist (Manuscript First.docx) ===
+=== Cancer Medicine format checklist (Manuscript First.docx) ===
 Title words: 14 (limit 20) — PASS
 Abstract words: 175 (limit 200) — PASS
 Abstract no refs: PASS

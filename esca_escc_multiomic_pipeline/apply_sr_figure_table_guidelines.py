@@ -1,9 +1,9 @@
 """
-Scientific Reports figure-legend and table-note alignment:
+Cancer Medicine figure-legend and table-note alignment:
 
 - Figure legends (after 'Figure legends', before 'Supplementary Materials'):
   each legend ≈50 words (see figure_legends_300_words.LEGENDS_300), panels **a**, **b**, …;
-  well under the Scientific Reports per-legend limit.
+  well under the Cancer Medicine per-legend limit.
 
 - Tables: insert editable 'Note.' paragraph after each Word table for
   statistical conventions (FDR, Cox, nominal p, etc.).

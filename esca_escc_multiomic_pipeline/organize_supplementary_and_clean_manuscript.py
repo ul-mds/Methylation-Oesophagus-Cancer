@@ -6,12 +6,14 @@ Organize all supplementary figures/tables under Supplementary/ and clean Manuscr
 - Supplementary/Supplementary_Figures.docx — S1–S2 with images (no main-figure duplicates)
 - Supplementary/Supplementary_Tables.xlsx — S1–S12 sheets from result/ and GEO outputs
 
-Manuscript (Scientific Reports):
+Manuscript (Cancer Medicine):
 - Main text keeps inline Figures 1–5 and Tables 2–4 only
 - Supplementary Information section: titles/legends ONLY (no embedded table grids or figure images)
 - Remove duplicate Fig. 3 stray image (combined volcano+bars panel)
 """
 from __future__ import annotations
+
+from esca_escc_multiomic_pipeline.study_paths import study_root
 
 import argparse
 import hashlib
@@ -27,7 +29,7 @@ from docx.shared import Inches
 from docx.text.paragraph import Paragraph
 from lxml import etree
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript First.docx"
 SUPP_DIR = STUDY_ROOT / "Supplementary"
 SUPP_FIG_DIR = SUPP_DIR / "Figures"
@@ -112,7 +114,7 @@ REMARK_ROWS = [
 SUPP_INTRO = (
     "Supplementary Tables S1–S12 and Supplementary Figs. S1–S2 are provided as separate files in the "
     "Supplementary/ folder (Supplementary_Tables.xlsx and Supplementary_Figures.docx; PNGs in "
-    "Supplementary/Figures/). Per Scientific Reports guidelines, full tabular data and supplementary "
+    "Supplementary/Figures/). Per Cancer Medicine author guidelines, full tabular data and supplementary "
     "figure images are not embedded in the main manuscript; brief titles and legends are listed below."
 )
 

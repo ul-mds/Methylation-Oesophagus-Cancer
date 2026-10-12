@@ -1,8 +1,10 @@
 """
 Replace Manuscript First.docx reference list with PubMed/Crossref-verified entries
-(Nature / Scientific Reports style: italic journal, bold volume, DOI included).
+(Wiley / Cancer Medicine style: italic journal, bold volume, DOI included).
 """
 from __future__ import annotations
+
+from esca_escc_multiomic_pipeline.study_paths import study_root
 
 import argparse
 import re
@@ -12,7 +14,7 @@ from pathlib import Path
 from docx import Document
 from docx.text.paragraph import Paragraph
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript First.docx"
 
 # (prefix before journal, journal, volume or None, suffix after volume)

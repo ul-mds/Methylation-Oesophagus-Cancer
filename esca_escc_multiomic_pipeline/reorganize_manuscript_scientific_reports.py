@@ -1,5 +1,5 @@
 """
-Scientific Reports–oriented manuscript cleanup:
+Cancer Medicine–oriented manuscript cleanup:
 
 - Introduction: remove figure/table citations; keep literature-driven framing.
 - Reorder body: Introduction → Methods → Results → Discussion → References → end matter.

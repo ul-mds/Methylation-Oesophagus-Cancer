@@ -10,10 +10,9 @@ from docx.enum.text import WD_COLOR_INDEX
 from docx.oxml import OxmlElement
 from docx.text.paragraph import Paragraph
 
-DOC_PATH = (
-    "/Users/senol/Desktop/AML/Esophageal Carcinoma (TCGA, Firehose Legacy)/"
-    "Manuscript.docx"
-)
+from esca_escc_multiomic_pipeline.study_paths import study_root
+
+DOC_PATH = study_root() / "Manuscript.docx"
 
 
 def yellow_run(paragraph: Paragraph, text: str) -> None:

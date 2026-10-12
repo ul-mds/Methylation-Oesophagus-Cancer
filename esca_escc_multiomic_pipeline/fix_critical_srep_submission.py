@@ -1,5 +1,5 @@
 """
-Fix Scientific Reports critical submission blockers in Manuscript First.docx.
+Fix Cancer Medicine critical submission blockers in Manuscript First.docx.
 All new or replaced text is highlighted yellow (WD_COLOR_INDEX.YELLOW).
 
 Fixes:
@@ -11,6 +11,8 @@ Fixes:
   6. Build Supplementary/Supplementary_Information.pdf
 """
 from __future__ import annotations
+
+from esca_escc_multiomic_pipeline.study_paths import study_root
 
 import argparse
 import io
@@ -26,7 +28,7 @@ from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 from fpdf import FPDF
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript First.docx"
 SUPP_DIR = STUDY_ROOT / "Supplementary"
 SUPP_PDF = SUPP_DIR / "Supplementary_Information.pdf"
@@ -162,7 +164,7 @@ def remove_editorial_display_items_block(doc: Document) -> None:
             to_remove.append(p)
         elif t.startswith("This manuscript currently includes five figures and three tables"):
             to_remove.append(p)
-        elif t.startswith("Scientific Reports allows at most eight combined figures"):
+        elif t.startswith("Cancer Medicine author guidelines note: at most eight combined figures"):
             to_remove.append(p)
     for p in to_remove:
         remove_paragraph(p)

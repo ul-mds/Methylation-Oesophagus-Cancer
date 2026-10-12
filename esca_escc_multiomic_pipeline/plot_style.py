@@ -1,5 +1,6 @@
 """
-Shared matplotlib settings for manuscript figures: Times New Roman (serif), high DPI, strong text contrast.
+Shared matplotlib settings for Cancer Medicine manuscript figures: Times New Roman (serif),
+300 DPI raster output, strong text contrast.
 """
 from __future__ import annotations
 

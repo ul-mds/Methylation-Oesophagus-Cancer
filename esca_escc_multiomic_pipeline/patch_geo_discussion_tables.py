@@ -5,10 +5,9 @@ from docx import Document
 from docx.oxml import OxmlElement
 from docx.text.paragraph import Paragraph
 
-DOC_PATH = (
-    "/Users/senol/Desktop/AML/Esophageal Carcinoma (TCGA, Firehose Legacy)/"
-    "TCGA_ESCA_ESCC_landmark60_full_scientific_manuscript.docx"
-)
+from esca_escc_multiomic_pipeline.study_paths import study_root
+
+DOC_PATH = study_root() / "TCGA_ESCA_ESCC_landmark60_full_scientific_manuscript.docx"
 
 
 def insert_paragraph_after(paragraph: Paragraph, style: str | None = None) -> Paragraph:

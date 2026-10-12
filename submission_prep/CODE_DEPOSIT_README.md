@@ -1,10 +1,10 @@
 # TCGA ESCA prognostic transfer — code deposit guide
 
-Use this folder structure when creating a **public GitHub repository** (and optional Zenodo archive) before Scientific Reports submission.
+Use this folder structure when creating a **public GitHub repository** (and optional Zenodo archive) before **Cancer Medicine** submission.
 
-## Recommended repository name
+## Public repository
 
-`tcga-esca-prognostic-transfer`
+https://github.com/ul-mds/Methylation-Oesophagus-Cancer
 
 ## Minimum files to include
 

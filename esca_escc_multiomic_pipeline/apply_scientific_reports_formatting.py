@@ -1,5 +1,5 @@
 """
-Apply Scientific Reports / Nature reference styling to the manuscript docx:
+Apply Cancer Medicine (Wiley) reference styling to the manuscript docx:
 - Reference list: journal italic, volume bold, sequential numbering
 - Main-text figure captions: bold Fig. n. + short title (full legend at end only)
 - End figure legends: bold Figure n. + description
@@ -315,14 +315,14 @@ def _apply_table_grid_style(doc: Document) -> None:
 
 def _update_display_item_note(doc: Document) -> None:
     new_txt = (
-        "Scientific Reports allows at most eight combined figures and tables in the main article. "
+        "Cancer Medicine author guidelines note: at most eight combined figures and tables in the main article. "
         "This manuscript currently includes six figures and seven tables (thirteen display items). "
         "Before submission, move at least five items to Supplementary Information (for example "
         "Supplementary Tables S1–S5) or merge panels, and cite each in the main text using the "
         "word Supplementary (e.g. Supplementary Table S1; Supplementary Fig. S1)."
     )
     for p in doc.paragraphs:
-        if "Scientific Reports expects at most eight" in p.text or "display items" in p.text and "six figures" in p.text:
+        if "Cancer Medicine expects at most eight" in p.text or "display items" in p.text and "six figures" in p.text:
             if p.text.strip() == new_txt.strip():
                 return
             _clear_runs(p)
@@ -340,7 +340,7 @@ def main() -> None:
     _apply_table_grid_style(doc)
     _update_display_item_note(doc)
     doc.save(str(path))
-    print("Scientific Reports formatting applied:", path)
+    print("Cancer Medicine formatting applied:", path)
 
 
 if __name__ == "__main__":

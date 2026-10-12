@@ -1,6 +1,6 @@
 """
-Reformat the manuscript toward Scientific Reports submission guidelines:
-https://www.nature.com/srep/author-instructions/submission-guidelines
+Reformat the manuscript toward Cancer Medicine submission guidelines:
+https://onlinelibrary.wiley.com/page/journal/20457634/homepage/forauthors.html
 
 - Unstructured abstract (≤200 words, no references)
 - Main text: Introduction → Results → Discussion (includes former Conclusion) → Methods
@@ -231,7 +231,7 @@ def main():
          "and tables are in the accompanying project directories (result/ and Plots/) and should be assigned a "
          "public repository DOI on acceptance."),
         ("Competing interests", "The authors declare no competing interests."),
-        ("Additional information (display items)", "Scientific Reports expects at most eight combined figures and "
+        ("Additional information (display items)", "Cancer Medicine expects at most eight combined figures and "
          "tables in the main article. This draft lists six figures and seven tables; before submission, move excess "
          "items to Supplementary Information (or merge panels) and cite as Supplementary Fig./Table."),
     ]
@@ -262,7 +262,7 @@ def main():
         prev = lp
 
     doc.save(str(path))
-    print("Scientific Reports-oriented formatting complete:", path)
+    print("Cancer Medicine–oriented formatting complete:", path)
 
 
 if __name__ == "__main__":

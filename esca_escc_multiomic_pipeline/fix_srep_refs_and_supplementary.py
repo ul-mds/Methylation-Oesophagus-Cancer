@@ -1,11 +1,13 @@
 """
-Audit and fix Manuscript First.docx for Scientific Reports:
+Audit and fix Manuscript First.docx for Cancer Medicine:
 - Nature-style reference list (italic journal, bold volume, et al. for 6+ authors)
 - Supplementary Table/Fig. citation phrasing per SR guidelines
 - Remove duplicate figure-legend heading
 - Embed Supplementary Fig. S1–S2 PNGs above captions
 """
 from __future__ import annotations
+
+from esca_escc_multiomic_pipeline.study_paths import study_root
 
 import argparse
 import re
@@ -18,7 +20,7 @@ from docx.shared import Inches
 from docx.text.paragraph import Paragraph
 from lxml import etree
 
-STUDY_ROOT = Path(__file__).resolve().parents[1]
+STUDY_ROOT = study_root()
 DEFAULT_DOCX = STUDY_ROOT / "Manuscript First.docx"
 PLOTS = STUDY_ROOT / "Plots"
 
@@ -289,7 +291,7 @@ def main() -> None:
         for x in issues:
             print(f"  - {x}")
     else:
-        print("Audit: references and supplementary citations OK for Scientific Reports.")
+        print("Audit: references and supplementary citations OK for Cancer Medicine.")
     print(f"Updated: {path}")
 
 
